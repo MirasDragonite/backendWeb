@@ -1,7 +1,9 @@
-const express = require("express");
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
+const path = require('path')
+
 router
-    .route("/index-two")
-    .get((req, res) => res.send("GET index-two"))
-    .post((req, res) => res.send("POST index-two"));
-module.exports = router;
+    .route('/')
+    .get((req,res) => res.sendFile(path.resolve('./index-two.html')))
+
+module.exports = router
